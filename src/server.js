@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
-const models = require('./models/index');
+//const models = require('./models/index');
 const path = require('path');
 
 // Decode json and x-www-form-urlencoded
@@ -14,11 +14,14 @@ app.set('views', path.join(__dirname, '/views'));
 // Add a bit of logging
 app.use(morgan('short'))
 
-//Associations
-models.Monkey.belongsTo(models.Enclos);
-models.Enclos.hasMany(models.Monkey, { as: "Monkeys" });
-
 app.get('/', function (req, res) {
+    res.render('Hello World !')
+
+//Associations
+//models.Monkey.belongsTo(models.Enclos);
+//models.Enclos.hasMany(models.Monkey, { as: "Monkeys" });
+
+/*app.get('/', function (req, res) {
     var tabTempMonkeys = [];
     var tabTempEnclos = [];
 
@@ -271,7 +274,7 @@ models.sequelize.sync().then(function() {
    * 
    * Listen only when database connection is sucessfull
    */
-  app.listen(3000, function() {
+    app.listen(process.env.PORT, function () {
     console.log('Express server listening on port 3000');
   });
 });
