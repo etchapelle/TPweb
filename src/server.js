@@ -15,8 +15,8 @@ app.use(bodyParser.json())
 app.use(morgan('short'))
 
 app.get('/', function (req, res) {
-    res.send('Hello World !')
-})
+    res.send("Hello World !")
+});
 
 //Associations
 //models.Monkey.belongsTo(models.Enclos);
@@ -275,7 +275,7 @@ models.sequelize.sync().then(function() {
    * 
    * Listen only when database connection is sucessfull
    */
-    app.listen(process.env.PORT, function () {
+app.listen(process.env.PORT, function () {
     console.log('Express server listening on port 3000');
-  });
+});
 ///});
