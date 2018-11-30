@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express()
-const models = require('./models/index');
+//const models = require('./models/index');
 //const path = require('path');
 
 // Decode json and x-www-form-urlencoded
