@@ -1,0 +1,23 @@
+extends layout.pug
+
+block entete
+    h2 
+        a(href= '/monkeys') Retour 
+    h1 Vue en detail de #{obj.name}
+
+block content
+    .main.container
+        .row
+            .col-md-6
+                h2 age: #{obj.age}
+                h2 espece: #{obj.espece}
+            .col-md-6
+                .row
+                - var urlMaj = '/maj/' + obj.id
+                - var urlDel = '/delete/monkeys/' + obj.id
+                h2
+                    .col-md-12
+                        a(href=urlMaj) MAJ
+                    .col-md-12
+                        a(href=urlDel) DEL
+

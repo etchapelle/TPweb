@@ -1,0 +1,17 @@
+extends layout.pug
+
+block entete
+    h2 
+        a(href= '/enclos') Retour 
+    h1 Vue en detail de #{obj.name}
+
+block content
+    .main.container
+        .row
+            .col-md-6
+                h2 taille: #{obj.taille}
+                h2 environnement: #{obj.environnement}
+            .col-md-6
+                - var url = '/maj/' + obj.id
+                h2
+                    a(href=url) MAJ
