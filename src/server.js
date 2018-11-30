@@ -1,15 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const app = express();
-//const models = require('./models/index');
-const path = require('path');
+const app = express()
+const models = require('./models/index');
+//const path = require('path');
 
 // Decode json and x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, '/views'));
+//app.set('view engine', 'pug');
+//app.set('views', path.join(__dirname, '/views'));
 
 // Add a bit of logging
 app.use(morgan('short'))
@@ -278,4 +278,4 @@ models.sequelize.sync().then(function() {
     app.listen(process.env.PORT, function () {
     console.log('Express server listening on port 3000');
   });
-//});
+///});
