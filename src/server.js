@@ -16,6 +16,7 @@ app.use(morgan('short'))
 
 app.get('/', function (req, res) {
     res.render('Hello World !')
+})
 
 //Associations
 //models.Monkey.belongsTo(models.Enclos);
